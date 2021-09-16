@@ -48,6 +48,7 @@
             this.lstCalificacion = new System.Windows.Forms.ListBox();
             this.txtCalificacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNumero
@@ -234,11 +235,22 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Semestre";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(685, 263);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(318, 28);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Nota: por semestre, son 5 unidades";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1318, 666);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCalificacion);
             this.Controls.Add(this.lstCalificacion);
@@ -288,6 +300,7 @@
         private System.Windows.Forms.ListBox lstCalificacion;
         private System.Windows.Forms.TextBox txtCalificacion;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 

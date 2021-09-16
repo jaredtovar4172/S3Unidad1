@@ -32,12 +32,60 @@ namespace ListaSimpleAlumno
                 string carrera = txtCarrera.Text;
                 int calificacion = int.Parse(txtCalificacion.Text);
                 int promedio = calificacion * 5;
-                int x = 0;
+                int a = 0 ,b = 0 ,c = 0,d = 0 ,l = 0,f = 0, g =0 , h = 0 , j = 0, x = 0;
                 lstCalificacion.Items.Clear();
                 for (int i = 0; i < promedio; i++)
                 {
-                    x++;
-                    lstCalificacion.Items.Add("unidad" + " - " + x + " - " + "promedio" + " - " + r.Next(5, 10));
+                    if (i < 5)
+                    {
+                        a++;
+                        lstCalificacion.Items.Add("semestre 1 " + "unidad" + " - " + a + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 5 && i < 10)
+                    {
+                        b++;
+                        lstCalificacion.Items.Add("semestre 2 " + "unidad" + " - " + b + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 10 && i < 15)
+                    {
+                    c++;
+                    lstCalificacion.Items.Add("semestre 3 " + "unidad" + " - " + c + " - " + "promedio" + " - " + r.Next(6, 10));
+                }
+                    if (i >= 15 && i < 20)
+                    {
+                        d++;
+                        lstCalificacion.Items.Add("semestre 4 " + "unidad" + " - " + d + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 20 && i < 25)
+                    {
+                        f++;
+                        lstCalificacion.Items.Add("semestre 5 " + "unidad" + " - " + f + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 25 && i < 30)
+                    {
+                        l++;
+                        lstCalificacion.Items.Add("semestre 6 " + "unidad" + " - " + l + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 30 && i < 35)
+                    {
+                        g++;
+                        lstCalificacion.Items.Add("semestre 7 " + "unidad" + " - " + g + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 35 && i < 40)
+                    {
+                        h++;
+                        lstCalificacion.Items.Add("semestre 8 " + "unidad" + " - " + h + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 40 && i < 45)
+                    {
+                        j++;
+                        lstCalificacion.Items.Add("semestre 9 " + "unidad" + " - " + j + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
+                    if (i >= 45 && i < 50)
+                    {
+                        x++;
+                        lstCalificacion.Items.Add("semestre 10 " + "unidad" + " - " + x + " - " + "promedio" + " - " + r.Next(6, 10));
+                    }
                 }
                 Nodo n = new Nodo(numero, matricula, nombre, apellidoP, apellidoM, carrera, calificacion);
                 miLista.Agregar(n);
