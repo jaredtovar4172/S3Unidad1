@@ -7,19 +7,19 @@ using System.Windows.Forms;
 
 namespace ListaAlumno
 {
-    class Lista
+    class ListaMateria
     {
-        private Nodo head;
-        public Nodo Head
+        private NodoC head;
+        public NodoC Head
         {
             get { return head; }
             set { head = value; }
         }
-        public Lista()
+        public ListaMateria()
         {
             head = null;
         }
-        public void Agregar(Nodo n)
+        public void Agregar(NodoC n)
         {
             if (head == null)
             {
@@ -32,7 +32,7 @@ namespace ListaAlumno
                 head = n;
                 return;
             }
-            Nodo h = head;
+            NodoC h = head;
             while (h.Siguiente != null)
             {
                 if (n.Numero < h.Siguiente.Numero)
@@ -43,29 +43,6 @@ namespace ListaAlumno
             }
             n.Siguiente = h.Siguiente;
             h.Siguiente = n;
-        }
-        public void AgregarMateria(NodoC n, int num)
-        {
-            if (head == null)
-            {
-                return;
-            }
-            if (n.Numero == num)
-            {
-                head.ListaMateria.Agregar(n);
-                return;
-            }
-            Nodo h = head;
-            while (h.Siguiente != null)
-            {
-                if (h.Siguiente.Numero == num)
-                {
-                    h.Siguiente.ListaMateria.Agregar(n);
-                    return;
-                }
-                h = h.Siguiente;
-            }
-            return;
         }
         public void Eliminar(int d)
         {
@@ -78,7 +55,7 @@ namespace ListaAlumno
                 head = head.Siguiente;
                 return;
             }
-            Nodo h = Head;
+            NodoC h = Head;
             while (h.Siguiente != null)
             {
                 if (h.Siguiente.Numero == d)
@@ -94,7 +71,7 @@ namespace ListaAlumno
         }
         public void Mostrar(ListBox lista)
         {
-            Nodo h = head;
+            NodoC h = head;
             lista.Items.Clear();
             while (h != null)
             {
@@ -102,7 +79,7 @@ namespace ListaAlumno
                 h = h.Siguiente;
             }
         }
-        public bool Buscar(int d, ref Nodo b)
+        public bool Buscar(int d, ref NodoC b)
         {
             if (head == null)
             {
@@ -113,7 +90,7 @@ namespace ListaAlumno
                 b = head;
                 return true;
             }
-            Nodo h = head;
+            NodoC h = head;
             while (h.Siguiente != null)
             {
                 if (h.Siguiente.Numero == d)
@@ -125,7 +102,7 @@ namespace ListaAlumno
             }
             return false;
         }
-        public void Modificar(int d, string m, string n, string ap, string am, string c, ListaMateria lm)
+        public void Modificar(int d, string m, double c)
         {
             if (head == null)
             {
@@ -133,25 +110,17 @@ namespace ListaAlumno
             }
             if (head.Numero == d)
             {
-                head.Matricula = m;
-                head.Nombre = n;
-                head.ApellidoP = ap;
-                head.ApellidoM = am;
-                head.Carrera = c;
-                head.ListaMateria = lm;
+                head.Materia = m;
+                head.Calificacion = c;
                 return;
             }
-            Nodo h = head;
+            NodoC h = head;
             while (h.Siguiente != null)
             {
                 if (h.Siguiente.Numero == d)
                 {
-                    h.Siguiente.Matricula = m;
-                    h.Siguiente.Nombre = n;
-                    h.Siguiente.ApellidoP = ap;
-                    h.Siguiente.ApellidoM = am;
-                    h.Siguiente.Carrera = c;
-                    h.Siguiente.ListaMateria = lm;
+                    h.Siguiente.Materia = m;
+                    h.Siguiente.Calificacion = c;
                     return;
                 }
                 h = h.Siguiente;
@@ -162,7 +131,7 @@ namespace ListaAlumno
         public override string ToString()
         {
             string listaTexto = "";
-            Nodo h = head;
+            NodoC h = head;
             while (h != null)
             {
                 listaTexto += h.ToString() + " ";

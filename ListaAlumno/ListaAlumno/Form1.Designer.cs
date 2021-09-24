@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstLista = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,25 +44,18 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMateria = new System.Windows.Forms.TextBox();
+            this.LstAlumno = new System.Windows.Forms.ListBox();
+            this.btnModificarCal = new System.Windows.Forms.Button();
+            this.btnBuscarCal = new System.Windows.Forms.Button();
+            this.btnEliminarCal = new System.Windows.Forms.Button();
+            this.txtAgregarCalificacion = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCalificacion = new System.Windows.Forms.TextBox();
-            this.lsvLista = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMateria = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtNumeroCal = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // lstLista
-            // 
-            this.lstLista.FormattingEnabled = true;
-            this.lstLista.ItemHeight = 16;
-            this.lstLista.Location = new System.Drawing.Point(22, 315);
-            this.lstLista.Name = "lstLista";
-            this.lstLista.Size = new System.Drawing.Size(528, 292);
-            this.lstLista.TabIndex = 33;
             // 
             // label6
             // 
@@ -213,93 +205,124 @@
             this.txtNumero.Size = new System.Drawing.Size(198, 30);
             this.txtNumero.TabIndex = 17;
             // 
-            // label7
+            // LstAlumno
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(511, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 28);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Materia";
+            this.LstAlumno.FormattingEnabled = true;
+            this.LstAlumno.ItemHeight = 16;
+            this.LstAlumno.Location = new System.Drawing.Point(41, 330);
+            this.LstAlumno.Name = "LstAlumno";
+            this.LstAlumno.Size = new System.Drawing.Size(925, 292);
+            this.LstAlumno.TabIndex = 33;
             // 
-            // txtMateria
+            // btnModificarCal
             // 
-            this.txtMateria.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMateria.Location = new System.Drawing.Point(633, 29);
-            this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(198, 30);
-            this.txtMateria.TabIndex = 34;
+            this.btnModificarCal.Location = new System.Drawing.Point(964, 166);
+            this.btnModificarCal.Name = "btnModificarCal";
+            this.btnModificarCal.Size = new System.Drawing.Size(121, 53);
+            this.btnModificarCal.TabIndex = 59;
+            this.btnModificarCal.Text = "Modificar";
+            this.btnModificarCal.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarCal
+            // 
+            this.btnBuscarCal.Location = new System.Drawing.Point(837, 166);
+            this.btnBuscarCal.Name = "btnBuscarCal";
+            this.btnBuscarCal.Size = new System.Drawing.Size(121, 53);
+            this.btnBuscarCal.TabIndex = 58;
+            this.btnBuscarCal.Text = "Buscar";
+            this.btnBuscarCal.UseVisualStyleBackColor = true;
+            this.btnBuscarCal.Click += new System.EventHandler(this.btnBuscarCal_Click);
+            // 
+            // btnEliminarCal
+            // 
+            this.btnEliminarCal.Location = new System.Drawing.Point(710, 166);
+            this.btnEliminarCal.Name = "btnEliminarCal";
+            this.btnEliminarCal.Size = new System.Drawing.Size(121, 53);
+            this.btnEliminarCal.TabIndex = 57;
+            this.btnEliminarCal.Text = "Eliminar";
+            this.btnEliminarCal.UseVisualStyleBackColor = true;
+            this.btnEliminarCal.Click += new System.EventHandler(this.btnEliminarCal_Click);
+            // 
+            // txtAgregarCalificacion
+            // 
+            this.txtAgregarCalificacion.Location = new System.Drawing.Point(583, 166);
+            this.txtAgregarCalificacion.Name = "txtAgregarCalificacion";
+            this.txtAgregarCalificacion.Size = new System.Drawing.Size(121, 53);
+            this.txtAgregarCalificacion.TabIndex = 56;
+            this.txtAgregarCalificacion.Text = "Agregar";
+            this.txtAgregarCalificacion.UseVisualStyleBackColor = true;
+            this.txtAgregarCalificacion.Click += new System.EventHandler(this.txtAgregarCalificacion_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(511, 65);
+            this.label8.Location = new System.Drawing.Point(646, 103);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 28);
-            this.label8.TabIndex = 37;
+            this.label8.TabIndex = 54;
             this.label8.Text = "Calificacion";
             // 
             // txtCalificacion
             // 
             this.txtCalificacion.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCalificacion.Location = new System.Drawing.Point(633, 67);
+            this.txtCalificacion.Location = new System.Drawing.Point(768, 105);
             this.txtCalificacion.Name = "txtCalificacion";
             this.txtCalificacion.Size = new System.Drawing.Size(198, 30);
-            this.txtCalificacion.TabIndex = 36;
+            this.txtCalificacion.TabIndex = 53;
             // 
-            // lsvLista
+            // label7
             // 
-            this.lsvLista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.lsvLista.HideSelection = false;
-            this.lsvLista.Location = new System.Drawing.Point(580, 315);
-            this.lsvLista.Name = "lsvLista";
-            this.lsvLista.Size = new System.Drawing.Size(407, 199);
-            this.lsvLista.TabIndex = 39;
-            this.lsvLista.UseCompatibleStateImageBehavior = false;
-            this.lsvLista.View = System.Windows.Forms.View.Details;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(646, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 28);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "Materia";
             // 
-            // button1
+            // txtMateria
             // 
-            this.button1.Location = new System.Drawing.Point(663, 110);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 53);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Agregar Calificacion";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtMateria.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMateria.Location = new System.Drawing.Point(768, 67);
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.Size = new System.Drawing.Size(198, 30);
+            this.txtMateria.TabIndex = 51;
             // 
-            // columnHeader1
+            // label9
             // 
-            this.columnHeader1.Text = "Numero";
-            this.columnHeader1.Width = 69;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(645, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 28);
+            this.label9.TabIndex = 61;
+            this.label9.Text = "Numero";
             // 
-            // columnHeader2
+            // txtNumeroCal
             // 
-            this.columnHeader2.Text = "Materia";
-            this.columnHeader2.Width = 127;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Calificacion";
-            this.columnHeader3.Width = 94;
+            this.txtNumeroCal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroCal.Location = new System.Drawing.Point(768, 29);
+            this.txtNumeroCal.Name = "txtNumeroCal";
+            this.txtNumeroCal.Size = new System.Drawing.Size(198, 30);
+            this.txtNumeroCal.TabIndex = 60;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 720);
-            this.Controls.Add(this.lsvLista);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtNumeroCal);
+            this.Controls.Add(this.btnModificarCal);
+            this.Controls.Add(this.btnBuscarCal);
+            this.Controls.Add(this.btnEliminarCal);
+            this.Controls.Add(this.txtAgregarCalificacion);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCalificacion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMateria);
-            this.Controls.Add(this.lstLista);
+            this.Controls.Add(this.LstAlumno);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -324,8 +347,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstLista;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -342,15 +363,17 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtMateria;
+        private System.Windows.Forms.ListBox LstAlumno;
+        private System.Windows.Forms.Button btnModificarCal;
+        private System.Windows.Forms.Button btnBuscarCal;
+        private System.Windows.Forms.Button btnEliminarCal;
+        private System.Windows.Forms.Button txtAgregarCalificacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCalificacion;
-        private System.Windows.Forms.ListView lsvLista;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMateria;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtNumeroCal;
     }
 }
 

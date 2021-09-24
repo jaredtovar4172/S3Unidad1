@@ -10,45 +10,46 @@ namespace ListaAlumno
     {
         private int numero;
         private string materia;
-        private string calificacion;
-        private NodoC siguienteCal;
+        private double calificacion;
+        private NodoC siguiente;
         public int Numero
         {
             get { return numero; }
             set { numero = value; }
         }
+
         public string Materia
         {
             get { return materia; }
             set { materia = value; }
         }
-        public string Calificacion
+        public double Calificacion
         {
             get { return calificacion; }
             set { calificacion = value; }
         }
-        public NodoC SiguienteCal
+        public NodoC Siguiente
         {
-            get { return siguienteCal; }
-            set { siguienteCal = value; }
+            get { return siguiente; }
+            set { siguiente = value; }
         }
         public NodoC()
         {
             numero = 0;
+            calificacion = 0;
             materia = "";
-            calificacion = "";
-            siguienteCal = null;
+            siguiente = null;
         }
-        public NodoC(int num, string m, string c)
+        public NodoC(int num, string mat, double cal)
         {
             numero = num;
-            materia = m;
-            calificacion = c;
-            siguienteCal = null;
+            materia = mat;
+            calificacion = cal;
+            siguiente = null;
         }
         public override string ToString()
         {
-            return numero + materia + calificacion;
+            return materia + " - " + calificacion;
         }
     }
 }

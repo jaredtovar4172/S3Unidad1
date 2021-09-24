@@ -13,12 +13,10 @@ namespace ListaAlumno
     public partial class Form1 : Form
     {
         Lista miLista;
-        ListaC listas;
         public Form1()
         {
             InitializeComponent();
             miLista = new Lista();
-            listas = new ListaC();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -31,7 +29,7 @@ namespace ListaAlumno
                 string apellidoP = txtApellidoP.Text;
                 string apellidoM = txtApellidoM.Text;
                 string carrera = txtCarrera.Text;
-                Nodo n = new Nodo(numero, matricula, nombre, apellidoP, apellidoM, carrera, null);
+                Nodo n = new Nodo(numero, matricula, nombre, apellidoP, apellidoM, carrera);
                 miLista.Agregar(n);
                 txtMatricula.Clear();
                 txtNombre.Clear();
@@ -39,7 +37,7 @@ namespace ListaAlumno
                 txtApellidoM.Clear();
                 txtCarrera.Clear();
                 txtNumero.Focus();
-                miLista.Mostrar(lstLista);
+                miLista.Mostrar(LstAlumno);
             }
             catch (Exception ex)
             {
@@ -53,16 +51,14 @@ namespace ListaAlumno
             {
                 int numero = int.Parse(txtNumero.Text);
                 miLista.Eliminar(numero);
-                listas.EliminarC(numero);
                 txtMatricula.Clear();
                 txtNombre.Clear();
                 txtApellidoP.Clear();
                 txtApellidoM.Clear();
                 txtCarrera.Clear();
                 txtNumero.Focus();
-                miLista.Mostrar(lstLista);
-                listas.MostrarC(lsvLista);
-                
+                miLista.Mostrar(LstAlumno);
+
             }
             catch (Exception ex)
             {
@@ -107,7 +103,7 @@ namespace ListaAlumno
             try
             {
                 int numero = int.Parse(txtNumero.Text);
-                miLista.Modificar(numero, txtMatricula.Text, txtNombre.Text, txtApellidoP.Text, txtApellidoM.Text, txtCarrera.Text);
+                miLista.Modificar(numero, txtMatricula.Text, txtNombre.Text, txtApellidoP.Text, txtApellidoM.Text, txtCarrera.Text, null);
                 txtNumero.Clear();
                 txtMatricula.Clear();
                 txtNombre.Clear();
@@ -115,32 +111,44 @@ namespace ListaAlumno
                 txtApellidoM.Clear();
                 txtCarrera.Clear();
                 txtNumero.Focus();
-                miLista.Mostrar(lstLista);
+                miLista.Mostrar(LstAlumno);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void txtAgregarCalificacion_Click(object sender, EventArgs e)
         {
             try
             {
-            int numero = int.Parse(txtNumero.Text);
+            int numero = int.Parse(txtNumeroCal.Text);
             string materia = txtMateria.Text;
-            string calificacion = txtCalificacion.Text;
+            double calificacion = double.Parse(txtCalificacion.Text);
             NodoC n = new NodoC(numero, materia, calificacion);
-            listas.AgregarC(n);
-            txtNumero.Focus();
-            txtMateria.Clear();
+            miLista.AgregarMateria(n, numero);
+            txtNumeroCal.Clear();
+            txtMateria.Clear(); 
             txtCalificacion.Clear();
-            listas.MostrarC(lsvLista);
+            txtNumeroCal.Focus();
+            miLista.Mostrar(LstAlumno);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
             }
+
+
+        }
+
+        private void btnBuscarCal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarCal_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

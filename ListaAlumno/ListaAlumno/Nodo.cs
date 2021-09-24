@@ -15,20 +15,25 @@ namespace ListaAlumno
         private string apellidoM;
         private string carrera;
         private Nodo siguiente;
+        private ListaMateria listaMateria;
+
+        public ListaMateria ListaMateria
+        {
+            get { return listaMateria; }
+            set { listaMateria = value; }
+        }
+
 
         public int Numero
         {
             get { return numero; }
             set { numero = value; }
         }
-
-
         public string Matricula
         {
             get { return matricula; }
             set { matricula = value; }
         }
-
 
         public string Nombre
         {
@@ -67,9 +72,10 @@ namespace ListaAlumno
             apellidoP = "";
             apellidoM = "";
             carrera = "";
+            listaMateria = new ListaMateria();
             siguiente = null;
         }
-        public Nodo(int num, string mat, string nom, string app, string apm, string car, Lista l)
+        public Nodo(int num, string mat, string nom, string app, string apm, string car)
         {
             numero = num;
             matricula = mat;
@@ -77,11 +83,17 @@ namespace ListaAlumno
             apellidoP = app;
             apellidoM = apm;
             carrera = car;
+            listaMateria = new ListaMateria();
             siguiente = null;
         }
         public override string ToString()
         {
-            return numero + " - " + matricula + " - " + nombre + " - " + apellidoP + " - " + apellidoM + " - " + carrera;
+            if (listaMateria == null)
+            {
+                return numero + " - " + matricula + " - " + nombre + " " + apellidoP + " " + apellidoM + " - " + carrera;
+
+            }
+            return numero + " - " + matricula + " - " + nombre + " " + apellidoP + " " + apellidoM + " - " + carrera + " - " + listaMateria.ToString() + " - ";
         }
     }
 }
